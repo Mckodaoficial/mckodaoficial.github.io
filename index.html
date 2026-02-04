@@ -53,7 +53,7 @@
     .link-card{padding:18px;border-radius:12px;background:#111;border:1px solid #333;color:#fff;text-decoration:none;display:flex;justify-content:space-between}
     .link-card:hover{border-color:#38bdf8;box-shadow:0 0 15px #38bdf855}
 
-    /* SHOWS */
+    /* AGENDA */
     .shows-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
     .show-card{background:#111;border:1px solid #333;border-radius:14px;padding:18px}
     .show-date{font-weight:800;color:#38bdf8}
@@ -62,7 +62,7 @@
 
     footer{text-align:center;padding:20px;border-top:1px solid #222;color:#777;font-size:.8rem}
 
-    /* CTA FIXO */
+    /* BOTÃO FIXO */
     .cta-fixo{position:fixed;right:20px;bottom:20px;background:linear-gradient(135deg,#38bdf8,#a855f7);
       color:#111;padding:14px 20px;border-radius:30px;font-weight:900;text-decoration:none;z-index:999}
 
@@ -139,13 +139,16 @@
   </div>
 </section>
 
+<!-- HTML DA AGENDA -->
 <section id="shows">
   <h2>Agenda de shows</h2>
+  <p class="sub">Contratações abertas</p>
+
   <div class="shows-grid">
     <div class="show-card">
       <span class="show-date">EM BREVE</span>
       <p>Datas serão divulgadas</p>
-      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">Contato</a>
+      <a href="https://wa.me/5511913462845" target="_blank">Contato</a>
     </div>
   </div>
 </section>
@@ -154,7 +157,10 @@
   © <span id="year"></span> MC KODA — Site oficial
 </footer>
 
-<a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="cta-fixo">Contrate MC Koda</a>
+<!-- HTML DO BOTÃO FIXO -->
+<a href="https://wa.me/5511913462845" target="_blank" class="cta-fixo">
+  Contrate MC Koda
+</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
