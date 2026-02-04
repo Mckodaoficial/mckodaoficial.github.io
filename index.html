@@ -17,233 +17,68 @@
   <meta property="og:url" content="https://mckodaoficial.github.io/" />
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background:#0a0a0a;
-      color:#fff;
-      margin:0;
-    }
+    body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;margin:0}
 
-    header {
-      padding:20px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:#111;
-      border-bottom:1px solid #222;
-      position:sticky;
-      top:0;
-      z-index:10;
-    }
+    header{padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:#111;border-bottom:1px solid #222;position:sticky;top:0;z-index:10}
+    .logo{font-size:1.4rem;font-weight:800;letter-spacing:2px}
+    nav a{margin-left:20px;color:#bbb;text-decoration:none;font-size:.9rem}
+    nav a:hover{color:#fff}
 
-    .logo {
-      font-size:1.4rem;
-      font-weight:800;
-      letter-spacing:2px;
-    }
+    /* HERO */
+    .hero{display:flex;flex-wrap:wrap;padding:90px 40px;align-items:center;justify-content:center;gap:50px;position:relative;overflow:hidden;
+      background:radial-gradient(circle at top left,#1a1a1a 0%,#0a0a0a 45%,#060606 100%);border-bottom:1px solid #1a1a1a}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(56,189,248,.08),rgba(168,85,247,.08),rgba(249,115,22,.08))}
+    .hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+      background:radial-gradient(circle,rgba(56,189,248,.25),transparent 65%);top:-120px;right:-120px;filter:blur(10px)}
+    .hero-text{max-width:520px;position:relative;z-index:1}
+    .hero-text h1{font-size:3.4rem;font-weight:800;line-height:1;margin-bottom:18px}
+    .hero-text h1 span{display:block;background:linear-gradient(135deg,#38bdf8,#a855f7,#f97316);-webkit-background-clip:text;color:transparent}
+    .hero-text p{margin-bottom:26px;font-size:1.05rem;color:#d4d4d8}
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-buttons a{padding:13px 24px;border-radius:30px;font-weight:800;text-decoration:none;text-transform:uppercase;font-size:.85rem}
+    .btn-primary{background:linear-gradient(135deg,#38bdf8,#a855f7);color:#111}
+    .btn-ghost{border:1px solid #3f3f46;color:#f4f4f5;background:#18181b}
+    .hero-img img{width:360px;border-radius:24px;border:1px solid #262626;box-shadow:0 20px 50px rgba(0,0,0,.5)}
 
-    nav a {
-      margin-left:20px;
-      color:#bbb;
-      text-decoration:none;
-      font-size:0.9rem;
-    }
+    section{padding:70px 40px;border-top:1px solid #222}
+    h2{font-size:1.9rem;margin-bottom:10px}
+    .sub{color:#aaa;margin-bottom:25px}
 
-    nav a:hover {color:#fff;}
+    .sobre{max-width:900px;line-height:1.7;color:#ddd}
 
-    /* ===== HERO SECTION ===== */
-    .hero {
-      display:flex;
-      flex-wrap:wrap;
-      padding:90px 40px;
-      align-items:center;
-      justify-content:center;
-      gap:50px;
-      position:relative;
-      overflow:hidden;
-      background:radial-gradient(circle at top left,#1a1a1a 0%,#0a0a0a 45%,#060606 100%);
-      border-bottom:1px solid #1a1a1a;
-    }
+    .fotos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+    .fotos-grid img{width:100%;border-radius:16px;border:1px solid #333}
 
-    .hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg,rgba(56,189,248,0.08),rgba(168,85,247,0.08),rgba(249,115,22,0.08));
-      pointer-events:none;
-    }
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
+    .link-card{padding:18px;border-radius:12px;background:#111;border:1px solid #333;color:#fff;text-decoration:none;display:flex;justify-content:space-between}
+    .link-card:hover{border-color:#38bdf8;box-shadow:0 0 15px #38bdf855}
 
-    .hero::after {
-      content:"";
-      position:absolute;
-      width:420px;
-      height:420px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(56,189,248,0.25),transparent 65%);
-      top:-120px;
-      right:-120px;
-      filter:blur(10px);
-    }
+    /* SHOWS */
+    .shows-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .show-card{background:#111;border:1px solid #333;border-radius:14px;padding:18px}
+    .show-date{font-weight:800;color:#38bdf8}
+    .show-card a{display:inline-block;margin-top:10px;padding:8px 16px;border-radius:20px;
+      background:linear-gradient(135deg,#38bdf8,#a855f7);color:#111;font-weight:800;text-decoration:none;font-size:.8rem}
 
-    .hero-text {
-      max-width:520px;
-      position:relative;
-      z-index:1;
-    }
+    footer{text-align:center;padding:20px;border-top:1px solid #222;color:#777;font-size:.8rem}
 
-    .hero-text h1 {
-      font-size:3.4rem;
-      font-weight:800;
-      line-height:1;
-      margin-bottom:18px;
-    }
-
-    .hero-text h1 span {
-      display:block;
-      background:linear-gradient(135deg,#38bdf8,#a855f7,#f97316);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-
-    .hero-text p {
-      margin-bottom:26px;
-      font-size:1.05rem;
-      color:#d4d4d8;
-    }
-
-    .hero-buttons {
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-    }
-
-    .hero-buttons a {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:13px 24px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:0.85rem;
-      text-transform:uppercase;
-      transition:0.2s;
-    }
-
-    .btn-primary {
-      background:linear-gradient(135deg,#38bdf8,#a855f7);
-      color:#111;
-      box-shadow:0 12px 30px rgba(56,189,248,0.25);
-    }
-
-    .btn-primary:hover {
-      transform:translateY(-2px);
-    }
-
-    .btn-ghost {
-      border:1px solid #3f3f46;
-      color:#f4f4f5;
-      background:#18181b;
-    }
-
-    .btn-ghost:hover {
-      transform:translateY(-2px);
-    }
-
-    .hero-img {
-      position:relative;
-      z-index:1;
-    }
-
-    .hero-img img {
-      width:360px;
-      border-radius:24px;
-      border:1px solid #262626;
-      box-shadow:0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    section {
-      padding:70px 40px;
-      border-top:1px solid #222;
-    }
-
-    h2 {
-      font-size:1.9rem;
-      margin-bottom:10px;
-      font-weight:700;
-    }
-
-    .sub {
-      color:#aaa;
-      margin-bottom:25px;
-      font-size:0.95rem;
-    }
-
-    .sobre {
-      max-width:900px;
-      line-height:1.7;
-      font-size:1rem;
-      color:#ddd;
-    }
-
-    .fotos-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:20px;
-    }
-
-    .fotos-grid img {
-      width:100%;
-      border-radius:16px;
-      border:1px solid #333;
-    }
-
-    .links-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:15px;
-    }
-
-    .link-card {
-      padding:18px;
-      border-radius:12px;
-      background:#111;
-      border:1px solid #333;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      color:#fff;
-      text-decoration:none;
-    }
-
-    .link-card:hover {
-      border-color:#38bdf8;
-      box-shadow:0 0 15px #38bdf855;
-    }
-
-    footer {
-      text-align:center;
-      padding:20px;
-      border-top:1px solid #222;
-      color:#777;
-      font-size:0.8rem;
-    }
+    /* CTA FIXO */
+    .cta-fixo{position:fixed;right:20px;bottom:20px;background:linear-gradient(135deg,#38bdf8,#a855f7);
+      color:#111;padding:14px 20px;border-radius:30px;font-weight:900;text-decoration:none;z-index:999}
 
     @media(max-width:700px){
-      .hero-text h1 {font-size:2.5rem;}
-      .hero {padding:50px 20px;}
-      section {padding:50px 20px;}
+      .hero-text h1{font-size:2.5rem}
+      .hero{padding:50px 20px}
+      section{padding:50px 20px}
     }
   </style>
 
-  <!-- Dados estruturados -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"MusicGroup",
     "name":"MC KODA",
     "genre":"Trap",
-    "image":"https://i.ibb.co/qPNCg0P/foto-1.jpg",
     "sameAs":[
       "https://www.instagram.com/mckodaofc/",
       "https://open.spotify.com/intl-pt/artist/4XENq7z7eVv731ie9vdBSQ",
@@ -261,48 +96,42 @@
     <a href="#sobre">Sobre</a>
     <a href="#fotos">Fotos</a>
     <a href="#links">Links</a>
+    <a href="#shows">Shows</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-text">
     <h1><span>MC KODA</span>Trap, verdade e evolução.</h1>
-    <p>Artista brasileiro de trap. Das batalhas de rima ao cenário profissional, construindo identidade, verdade e música autoral.</p>
-
+    <p>Artista brasileiro de trap. Das batalhas de rima ao cenário profissional.</p>
     <div class="hero-buttons">
-      <a href="https://open.spotify.com/intl-pt/artist/4XENq7z7eVv731ie9vdBSQ" class="btn-primary" target="_blank">Ouça no Spotify</a>
-      <a href="https://www.youtube.com/@Mckodaoficial" class="btn-ghost" target="_blank">YouTube Oficial</a>
+      <a href="https://open.spotify.com/intl-pt/artist/4XENq7z7eVv731ie9vdBSQ" class="btn-primary" target="_blank">Spotify</a>
+      <a href="https://www.youtube.com/@Mckodaoficial" class="btn-ghost" target="_blank">YouTube</a>
     </div>
   </div>
-
   <div class="hero-img">
-    <img src="https://i.ibb.co/qPNCg0P/foto-1.jpg" alt="MC KODA" />
+    <img src="https://i.ibb.co/qPNCg0P/foto-1.jpg" alt="MC KODA">
   </div>
 </section>
 
 <section id="sobre">
   <h2>Sobre o artista</h2>
   <p class="sub">Biografia oficial</p>
-
   <div class="sobre">
-    <p><strong>MC KODA</strong> é um artista brasileiro de trap que iniciou sua trajetória nas batalhas de rima em 2017. Evoluiu artisticamente, tornando-se cantor, compositor e produtor musical.</p>
+    <p><strong>MC KODA</strong> é artista brasileiro de trap, cantor, compositor e produtor musical.</p>
   </div>
 </section>
 
 <section id="fotos">
   <h2>Fotos oficiais</h2>
-  <p class="sub">Material autorizado</p>
-
   <div class="fotos-grid">
-    <img src="https://i.ibb.co/qPNCg0P/foto-1.jpg" />
-    <img src="https://i.ibb.co/dsBbrBt9/foto-2.jpg" />
+    <img src="https://i.ibb.co/qPNCg0P/foto-1.jpg">
+    <img src="https://i.ibb.co/dsBbrBt9/foto-2.jpg">
   </div>
 </section>
 
 <section id="links">
-  <h2>Ouça & siga</h2>
-  <p class="sub">Plataformas oficiais</p>
-
+  <h2>Plataformas oficiais</h2>
   <div class="links-grid">
     <a class="link-card" href="https://open.spotify.com/intl-pt/artist/4XENq7z7eVv731ie9vdBSQ" target="_blank">Spotify</a>
     <a class="link-card" href="https://www.instagram.com/mckodaofc/" target="_blank">Instagram</a>
@@ -310,9 +139,22 @@
   </div>
 </section>
 
+<section id="shows">
+  <h2>Agenda de shows</h2>
+  <div class="shows-grid">
+    <div class="show-card">
+      <span class="show-date">EM BREVE</span>
+      <p>Datas serão divulgadas</p>
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank">Contato</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   © <span id="year"></span> MC KODA — Site oficial
 </footer>
+
+<a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="cta-fixo">Contrate MC Koda</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
